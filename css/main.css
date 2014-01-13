@@ -142,6 +142,7 @@ body {
   background-color: #000;
   font-family: 'infinity', monospace;
   letter-spacing: 1px;
+  height: 100%;
 }
 ::selection{
 		background-color: #f59995;
@@ -1861,31 +1862,34 @@ a,
   margin-left: -20px;
   margin-top: -20px;
 }
-.button-e:hover ~ .block-b > .rect-be,
-.button-e:hover ~ .block-b > .gradient-be {
-  top: 0;
-  -webkit-transition: top 1s ease-out;
-  -moz-transition: top 1s ease-out;
-  -ms-transition: top 1s ease-out;
-  -o-transition: top 1s ease-out;
-  transition: top 1s ease-out;
+.button-e:hover ~ .block {
+  height: 280px;
 }
-.block-b {
+.button-e:hover ~ .block .gradient,
+.button-e:hover ~ .block .rect {
+  top: 0;
+  -webkit-transition: all 1s ease-out;
+  -moz-transition: all 1s ease-out;
+  -ms-transition: all 1s ease-out;
+  -o-transition: all 1s ease-out;
+  transition: all 1s ease-out;
+}
+.block {
   overflow: hidden;
   position: absolute;
   top: 50%;
   left: 50%;
   margin-left: -100px;
   z-index: 0;
-  margin-top: 0;
+  margin-top: -20px;
   width: 200px;
   height: 200px;
 }
-.block-b.is-2 {
+.block.is-2 {
   z-index: 1;
   margin-top: -100px;
 }
-.block-b > .rect-be {
+.block .rect {
   border-width: 20px;
   border-style: solid;
   border-color: #fe0000;
@@ -1895,8 +1899,9 @@ a,
   z-index: 0;
   left: 0;
   top: -100%;
+  box-shadow: 0 0 80px 10px #000;
 }
-.block-b > .gradient-be {
+.block .gradient {
   width: 200px;
   height: 200px;
   position: absolute;
@@ -1913,6 +1918,10 @@ a,
 /* IE10+ */
   background: linear-gradient(to bottom, #000 4%, #000 5%, rgba(0,0,0,0) 100%);
 /* W3C */
+}
+body {
+  perspective: 1000px;
+  -webkit-perspective: 1000px;
 }
 .header-l {
   background: c-red;

@@ -1,6 +1,8 @@
 // ELEMENTS
 @import '../assets/imports.styl'
 
+
+
 redColor = #FE0000
 .button-e
 	rect 4*gs
@@ -13,41 +15,42 @@ redColor = #FE0000
 	margin-top  - 2*gs
 
 	&:hover
-		& ~ .block-b
-			> .rect-be, > .gradient-be
+		& ~ .block
+			height 28*gs
+			.gradient, .rect 
 				top 0
-				-webkit-transition top 1s ease-out
-				-moz-transition top 1s ease-out
-				-ms-transition top 1s ease-out
-				-o-transition top 1s ease-out
-				transition top 1s ease-out
+				-webkit-transition all 1s ease-out
+				-moz-transition all 1s ease-out
+				-ms-transition all 1s ease-out
+				-o-transition all 1s ease-out
+				transition all 1s ease-out
 
 
 rectSize = 20*gs
-.block-b
+.block
 	overflow hidden
 	position absolute
 	nw 50%
 	margin-left - (rectSize/2)
 	z-index 0
-	margin-top  0
+	margin-top  -(2*gs)
 	rect rectSize
-	// box-shadow 0 0 8*gs gs black
-
 
 	&.is-2
 		z-index 1
 		margin-top  - (rectSize/2)
 
-	> .rect-be
+	.rect
 		border 2*gs solid redColor
 		rect rectSize
 		position absolute
 		z-index 0
 		l 0
 		t -100%
+		box-shadow 0 0 8*gs gs black
 
-	> .gradient-be
+
+	.gradient
 		rect rectSize
 		position absolute
 		z-index 1
@@ -62,9 +65,9 @@ rectSize = 20*gs
 
 
 
-
-
-
+body
+	perspective 1000px
+	-webkit-perspective 1000px
 
 
 
