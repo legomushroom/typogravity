@@ -1,6 +1,44 @@
 // ELEMENTS
 @import '../assets/imports.styl'
 
-.block-e
-	border 10px solid #FE0000
 
+rectSize = 20*gs
+.block-b
+	overflow hidden
+	position absolute
+	nw 50%
+	margin-left - (rectSize/2)
+	box-shadow 0 0 8*gs gs black
+	z-index 0
+	margin-top  0
+
+
+	&.is-2
+		z-index 1
+		margin-top  - (rectSize/2)
+
+	> .rect-be
+		border 2*gs solid #FE0000
+		rect rectSize
+		position absolute
+		z-index 0
+		l 0
+		t -100%
+		nw 0
+		// -webkit-transition top .75s linear
+		// -moz-transition top .75s linear
+		// -ms-transition top .75s linear
+		// -o-transition top .75s linear
+		// transition top .75s linear
+
+	> .gradient-be
+		rect rectSize
+		position relative
+		z-index 1
+		background: -moz-linear-gradient(top,  rgba(0,0,0,1) 4%, rgba(0,0,0,1) 5%, rgba(0,0,0,0) 100%); /* FF3.6+ */
+		background: -webkit-gradient(linear, left top, left bottom, color-stop(4%,rgba(0,0,0,1)), color-stop(5%,rgba(0,0,0,1)), color-stop(100%,rgba(0,0,0,0))); /* Chrome,Safari4+ */
+		background: -webkit-linear-gradient(top,  rgba(0,0,0,1) 4%,rgba(0,0,0,1) 5%,rgba(0,0,0,0) 100%); /* Chrome10+,Safari5.1+ */
+		background: -o-linear-gradient(top,  rgba(0,0,0,1) 4%,rgba(0,0,0,1) 5%,rgba(0,0,0,0) 100%); /* Opera 11.10+ */
+		background: -ms-linear-gradient(top,  rgba(0,0,0,1) 4%,rgba(0,0,0,1) 5%,rgba(0,0,0,0) 100%); /* IE10+ */
+		background: linear-gradient(to bottom,  rgba(0,0,0,1) 4%,rgba(0,0,0,1) 5%,rgba(0,0,0,0) 100%); /* W3C */
+		// filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#00000000',GradientType=0 ); /* IE6-9 */
